@@ -6,7 +6,7 @@ Description
 SharpCradle is a tool designed to help penetration testers or red teams download and execute .NET binaries into memory.
 
 Contact at:
-- Twitter: @anthemtotheego or @g0ldengunsec
+- Twitter: @anthemtotheego
 
 **Before submitting issues, this tool may not always be updated actively. I encourage you to borrow, add, mod, and/or make your own.  Remember, all the awesome code out there (and there is a lot) can be taken/modified to create your own custom tools.**
 
