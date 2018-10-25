@@ -8,6 +8,8 @@ SharpCradle is a tool designed to help penetration testers or red teams download
 Contact at:
 - Twitter: @anthemtotheego
 
+Contributors: @bohops - Download .NET inline project file from web and execute funtionality
+
 Quick blog:
 
 http://blog.redxorblue.com/2018/10/sharpcradle-loading-remote-c-binaries.html
