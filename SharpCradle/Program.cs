@@ -55,6 +55,11 @@ namespace SharpCradle
                 MemoryStream ms = new MemoryStream();
                 using (WebClient client = new WebClient())
                 {
+                    // Allow the WebClient to authenticate through a system proxy with the current user's credentials
+                    WebProxy proxy = new WebProxy();
+                    proxy.UseDefaultCredentials = true;
+                    client.Proxy = proxy;
+
                     //Access web and read the bytes from the binary file
                     System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls | System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
                     ms = new MemoryStream(client.DownloadData(args[1]));
