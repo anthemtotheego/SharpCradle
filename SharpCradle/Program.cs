@@ -89,6 +89,10 @@ namespace SharpCradle
         //loadAssembly
         public static void loadAssembly(byte[] bin, object[] commands)
         {
+            // Redirect StandardOut to a StringWriter to capture any output of the loaded assembly
+            StringWriter strWriter = new StringWriter();
+            Console.SetOut(strWriter);
+
             Assembly a = Assembly.Load(bin);
             try
             {       
@@ -102,7 +106,20 @@ namespace SharpCradle
                     object o = a.CreateInstance(method.Name);                    
                     method.Invoke(o, null);
                 }
-            }//End try/catch            
+            }//End try/catch  
+
+            // Redirect StandardOut for the application back to the console to resume normal output
+            var standardOutput = new StreamWriter(Console.OpenStandardOutput());
+            standardOutput.AutoFlush = true;
+            Console.SetOut(standardOutput);
+
+            // Any output from the loaded assembly is now stored in strWriter and can be accessed from strWriter.ToString()
+            // Since this is just an example, we are just going to write the output to the console (after doing all the work to capture it), 
+            // but you could write it to a file, or post it to a site, or return it from this function if you wanted. Options are now limitless.
+            // Keep in mind, that it will store up all of the output until the end, so you won't see active output in this method and will not
+            // work well for interactive programs.
+            Console.WriteLine(strWriter.ToString());
+
         }//End loadAssembly
 
         private static void help()
