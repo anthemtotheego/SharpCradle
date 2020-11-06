@@ -24,7 +24,7 @@ http://blog.redxorblue.com/2018/10/sharpcradle-loading-remote-c-binaries.html
 Setup - Quick and Dirty
 ==============================
 
-**Note: For those of you who don't want to go through the trouble of compiling your own I uploaded an x64 and x86 binary found in the CompiledBinaries folder.  For those of you who do want to compile your own... I used Windows 10, Visual Studio 2017 - mileage may vary**
+**Note: I used Windows 10, Visual Studio 2017 - mileage may vary**
 
 1. Download SharpCradle tool and open up SharpCradle.sln                         
 
