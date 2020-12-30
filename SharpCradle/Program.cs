@@ -94,8 +94,8 @@ namespace SharpCradle
                 MethodInfo method = a.EntryPoint;
                 if (method != null)
                 {
-                    object o = a.CreateInstance(method.Name);                    
-                    method.Invoke(o, null);
+                    object[] parameters = method.GetParameters().Length == 0 ? null : new object[] { new string[0] };
+                    method.Invoke(null, parameters);
                 }
             }//End try/catch            
         }//End loadAssembly
